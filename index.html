@@ -5,24 +5,8 @@
     <title>iview example</title>
     <!-- 引入样式 -->
     <link rel="stylesheet" href="iview/styles/iview.css">
+    <link rel="stylesheet" href="iview/common.css">
     <style>
-    .i-layout{
-        border: 1px solid #d7dde4;
-        background: #f5f7f9;
-        position: relative;
-        border-radius: 4px;
-        overflow: hidden;
-    }
-    .i-panel {
-      border: 1px solid #eee;
-      border-radius: 6px;
-      margin-bottom: 20px;
-      position: relative;
-      transition: all .2s ease-in-out;
-      background: #fff;
-      margin: 10px;
-      padding: 10px;
-    }
     </style>
 </head>
 <body>
@@ -87,7 +71,7 @@
           </col>
           <col span="9">
             <form-item>
-                <i-button type="primary">查询</i-button>
+                <i-button type="primary" @click="handleSubmit" size="small">查询</i-button>
                 <!-- <i-button type="ghost" style="margin-left: 8px">取消</i-button> -->
             </form-item>
           </col>
