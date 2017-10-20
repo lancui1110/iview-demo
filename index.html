@@ -29,7 +29,7 @@
                 </i-select>
             </form-item>
           </col>
-          <col span="6">
+          <col span="12">
             <form-item label="日期控件">
                 <Row>
                     <Col span="11">
@@ -69,7 +69,7 @@
                 </i-switch>
             </form-item>
           </col>
-          <col span="9">
+          <col span="6">
             <form-item>
                 <i-button type="primary" @click="handleSubmit" size="small">查询</i-button>
                 <!-- <i-button type="ghost" style="margin-left: 8px">取消</i-button> -->
@@ -82,6 +82,14 @@
   <!-- 查询结果 -->
   <div class="i-panel">
       <i-table border :columns="columns5" :data="data5"></i-table>
+      <row type="flex" justify="end" class="i-page-panel">
+        <col span="6">
+            <Page :total="100" 
+                    show-elevator 
+                    page-size="20" 
+                    @on-change="onPageChange"></Page>
+        </col>
+      </row>
   </div>
 </div>
 
@@ -162,6 +170,10 @@
                       this.$Message.error('表单验证失败!');
                   }
               })
+          },
+          // 页码改变的回调，返回改变后的页码, 参数：页码
+          onPageChange(curIndex) { 
+            alert(`当前页${curIndex}`)
           }
       }
     })
